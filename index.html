@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: white;
+            color: black;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+        
+        .container {
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #e0f5e9;
+            color: #0a7d3f;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 6px 16px 6px 8px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            animation: flipIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        
+        .badge-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            fill: #0a7d3f;
+        }
+        
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: scaleReveal 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.3s;
+        }
+        
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.5;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: simpleReveal 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.5s;
+        }
+        
+        /* Badge flip animation */
+        @keyframes flipIn {
+            0% {
+                opacity: 0;
+                transform: rotateX(-90deg) translateY(20px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+                transform: rotateX(0deg) translateY(0);
+            }
+        }
+        
+        /* Heading scale + reveal animation - faster */
+        @keyframes scaleReveal {
+            0% {
+                opacity: 0;
+                transform: scale(1.1);
+                filter: blur(5px);
+            }
+            60% {
+                opacity: 0.9;
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+        
+        /* Simple reveal animation for paragraph */
+        @keyframes simpleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Background subtle gradient */
+        .bg-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(224, 245, 233, 0.3) 0%, rgba(255, 255, 255, 0) 60%);
+            z-index: -1;
+            opacity: 0;
+            animation: gradientFade 2s ease-out forwards 0.5s;
+        }
+        
+        @keyframes gradientFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .badge {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bg-effect"></div>
+        <div class="badge">
+            <svg class="badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            ahmadsolaria.me
+        </div>
+        <h1>Site Under Development</h1>
+        <p>This Site is Currently in Development and will be Updated Soon,<br>Please Check back later, Thanks!</p>
+    </div>
+</body>
+</html>
